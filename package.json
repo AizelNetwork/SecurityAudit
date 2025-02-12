@@ -1,0 +1,28 @@
+{
+  "name": "securityaudit",
+  "version": "1.0.0",
+  "description": "contracts security audit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AizelNetwork/SecurityAudit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AizelNetwork/SecurityAudit/issues"
+  },
+  "homepage": "https://github.com/AizelNetwork/SecurityAudit#readme",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "hardhat": "^2.22.18"
+  },
+  "dependencies": {
+    "@limitbreak/creator-token-contracts": "^1.1.2",
+    "@openzeppelin/contracts": "^5.2.0"
+  }
+}
