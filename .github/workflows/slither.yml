@@ -18,14 +18,7 @@ jobs:
       with:
         submodules: true
         ssh-key: ${{secrets.SSH_PRIVATE_KEY}}
-        
-    - name: Setup SSH key for private submodules
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan github.com >> ~/.ssh/known_hosts
-        
+                
     - name: Run Slither
       uses: crytic/slither-action@v0.4.0
       id: slither
