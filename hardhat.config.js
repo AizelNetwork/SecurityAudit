@@ -1,4 +1,5 @@
 require("@nomicfoundation/hardhat-toolbox");
+require('@openzeppelin/hardhat-upgrades');
 
 // only github action use
 const DEPLOYER_PRIVATE_KEY = "1314caea4de1dc11d2c7403fc727b907eb7ab2a0857374f603e219cf7a203240";
@@ -13,6 +14,9 @@ module.exports = {
         runs: 200,
       },
     },
+  },
+  gasReporter: {
+    enabled: true,
   },
   networks: {
     sepolia: {

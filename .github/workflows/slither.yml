@@ -15,7 +15,10 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
+      with:
+        submodules: true
+        ssh-key: ${{secrets.SSH_PRIVATE_KEY}}
+                
     - name: Run Slither
       uses: crytic/slither-action@v0.4.0
       id: slither

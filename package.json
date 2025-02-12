@@ -19,10 +19,12 @@
   "homepage": "https://github.com/AizelNetwork/SecurityAudit#readme",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/hardhat-upgrades": "^3.9.0",
     "hardhat": "^2.22.18"
   },
   "dependencies": {
     "@limitbreak/creator-token-contracts": "^1.1.2",
-    "@openzeppelin/contracts": "^5.2.0"
+    "@openzeppelin/contracts": "^5.2.0",
+    "@openzeppelin/contracts-upgradeable": "^5.2.0"
   }
 }
