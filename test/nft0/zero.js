@@ -5,9 +5,11 @@ describe("Zero", function () {
     let Zero, zero, owner, addr1, addr2;
 
     beforeEach(async function () {
-        Zero = await ethers.getContractFactory("Zero");
+        Zero = await ethers.getContractFactory("ZeroUpgradeable");
         [owner, addr1, addr2, _] = await ethers.getSigners();
-        zero = await Zero.deploy("ZeroToken", "ZERO");
+        // zero = await Zero.deploy("ZeroToken", "ZERO");
+        zero = await Zero.deploy();
+        await zero.initialize("ZeroToken", "ZERO")
     });
 
     it("Should deploy with correct name and symbol", async function () {
