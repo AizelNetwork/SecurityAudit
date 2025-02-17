@@ -1,5 +1,6 @@
 require("@nomicfoundation/hardhat-toolbox");
 require('@openzeppelin/hardhat-upgrades');
+require("@nomicfoundation/hardhat-verify");
 
 // only github action use
 const DEPLOYER_PRIVATE_KEY = "1314caea4de1dc11d2c7403fc727b907eb7ab2a0857374f603e219cf7a203240";
@@ -50,7 +51,17 @@ module.exports = {
   },
   // etherscan: {
   //   apiKey: {
-  //     sepolia: ETHERSCAN_API_KEY,
+  //     sepolia: "",
   //   },
+  //   customChains: [
+  //     {
+  //       network: "sepolia",
+  //       chainId: 11155111,
+  //       urls: {
+  //         apiURL: "http://api-sepolia.etherscan.io/api",
+  //         browserURL: "https://sepolia.etherscan.io/"
+  //       }
+  //     }
+  //   ]
   // },
 };

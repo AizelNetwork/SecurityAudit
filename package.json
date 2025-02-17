@@ -19,6 +19,8 @@
   "homepage": "https://github.com/AizelNetwork/SecurityAudit#readme",
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@nomicfoundation/hardhat-verify": "^2.0.12",
+    "@nomiclabs/hardhat-etherscan": "^3.1.8",
     "@openzeppelin/hardhat-upgrades": "^3.9.0",
     "hardhat": "^2.22.18"
   },
