@@ -20,8 +20,14 @@ describe("TokenCredit", function () {
         await tokenCredit.grantRole(await tokenCredit.OPERATOR_ROLE(), operator.address);
     });
 
+    it("Should allow get support token list", async function () {
+        const [supportToken] = await tokenCredit.allSupportTokens();
+        expect(supportToken).to.equal(usdt.target);
+    });
+
     it("Should add a new token", async function () {
-        expect(await tokenCredit.isSupportToken(usdt.target)).to.be.true;
+        await tokenCredit.addToken(ethers.ZeroAddress);
+        expect(await tokenCredit.isSupportToken(ethers.ZeroAddress)).to.be.true;
     });
 
     it("Should remove a token", async function () {
@@ -34,11 +40,19 @@ describe("TokenCredit", function () {
         expect(await tokenCredit.isRegister(addr1.address)).to.be.true;
     });
 
-    it("Should deposit credit", async function () {
+    it("Should deposit credit by usdt", async function () {
         await tokenCredit.registerCredit();
         await usdt.approve(tokenCredit.target, ethers.parseUnits("50", 18));
         await tokenCredit.depostCredit(usdt.target, ethers.parseUnits("50", 18));
         expect(await tokenCredit.creditDepositAmount(owner.address, usdt.target)).to.equal(ethers.parseUnits("50", 18));
+    });
+
+    it("Should deposit credit by eth", async function () {
+        const depositAmount = ethers.parseEther("1");
+        await tokenCredit.addToken(ethers.ZeroAddress);
+        await tokenCredit.registerCredit();
+        await tokenCredit.depostCredit(ethers.ZeroAddress, depositAmount, { value: depositAmount });
+        expect(await tokenCredit.creditDepositAmount(owner.address, ethers.ZeroAddress)).to.equal(depositAmount);
     });
 
     it("Should withdraw tokens", async function () {
@@ -48,5 +62,16 @@ describe("TokenCredit", function () {
         await tokenCredit.connect(addr1).depostCredit(usdt.target, ethers.parseUnits("50", 18));
         await tokenCredit.withdraw(owner.address, [usdt.target]);
         expect(await usdt.balanceOf(owner.address)).to.equal(ethers.parseUnits("50", 18));
+    });
+
+    it("Should withdraw eth", async function () {
+        const balance = await ethers.provider.getBalance(addr2.address);
+        const depositAmount = ethers.parseEther("1");
+        await tokenCredit.addToken(ethers.ZeroAddress);
+        await tokenCredit.registerCredit();
+        await tokenCredit.depostCredit(ethers.ZeroAddress, depositAmount, { value: depositAmount });
+        expect(await tokenCredit.creditDepositAmount(owner.address, ethers.ZeroAddress)).to.equal(depositAmount);
+        await tokenCredit.withdraw(addr2.address, [ethers.ZeroAddress]);
+        expect(await ethers.provider.getBalance(addr2.address)).to.be.gt(balance);
     });
 });
