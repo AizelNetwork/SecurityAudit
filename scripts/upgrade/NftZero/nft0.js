@@ -4,9 +4,6 @@ async function main() {
     const [deployer] = await ethers.getSigners();
     console.log("Using account:", deployer.address);
 
-    let nonce = await ethers.provider.getTransactionCount(deployer.address);
-    console.log("Nonce:", nonce);
-
     const nftName = "Zero"; // NFT name
     const nftSymbol = "ZERO"; // NFT symbol
     const weth = "0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9"; // weth address

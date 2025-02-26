@@ -4,9 +4,6 @@ async function main() {
     const [deployer] = await ethers.getSigners();
     console.log("Using account:", deployer.address);
 
-    let nonce = await ethers.provider.getTransactionCount(deployer.address);
-    console.log("Nonce:", nonce);
-
     // const usdt = ethers.ZeroAddress;
     const ERC20Mock = await ethers.getContractFactory("ERC20Mock");
     const usdt = await ERC20Mock.deploy("Mock USDT", "USDT", deployer.address, ethers.parseUnits("999999999999999", 18));
