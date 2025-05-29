@@ -26,7 +26,7 @@ async function main() {
         "Qwen3-8B-Q4_K_M",
         "gemma-3-12b-it-qat-Q4_K_M",
         "Llama-4-Scout-17B-16E-Instruct-Q4_K_M",
-        "peaq-content-filter",
+        "aizel/peaq-content-filter",
     ];
 
     // const AimosGateway = await ethers.getContractFactory("AimosGateway");
