@@ -1,0 +1,213 @@
+{
+  "manifestVersion": "3.2",
+  "proxies": [
+    {
+      "address": "0x15F1ba895420e7784DEbdFF550dF27DDe0CEB2A3",
+      "txHash": "0x5254db65bf1f53f88a6e2da6a34d3f7dc873d8e00ae8c47e4784886b34bb97c9",
+      "kind": "transparent"
+    }
+  ],
+  "impls": {
+    "8004585c1d90c5f711776f7981a4d703f413ff23488c94375ef3f6b0d0574157": {
+      "address": "0x9f9F8C5777cc511621D480aa296F79e3a9bFbcA9",
+      "txHash": "0x782de0377174f909b815f261c70349732da98dc49c59a3edab0d44bee6f7fc30",
+      "layout": {
+        "solcVersion": "0.8.26",
+        "storage": [
+          {
+            "label": "relayer",
+            "offset": 0,
+            "slot": "0",
+            "type": "t_address",
+            "contract": "AimosGatewayUpgradeable",
+            "src": "contracts/Relayer/AimosGatewayUpgradeable.sol:13"
+          },
+          {
+            "label": "feeManager",
+            "offset": 0,
+            "slot": "1",
+            "type": "t_address",
+            "contract": "AimosGatewayUpgradeable",
+            "src": "contracts/Relayer/AimosGatewayUpgradeable.sol:14"
+          },
+          {
+            "label": "requestCounter",
+            "offset": 0,
+            "slot": "2",
+            "type": "t_uint256",
+            "contract": "AimosGatewayUpgradeable",
+            "src": "contracts/Relayer/AimosGatewayUpgradeable.sol:15"
+          },
+          {
+            "label": "calls",
+            "offset": 0,
+            "slot": "3",
+            "type": "t_mapping(t_uint256,t_struct(Call)27340_storage)",
+            "contract": "AimosGatewayUpgradeable",
+            "src": "contracts/Relayer/AimosGatewayUpgradeable.sol:28"
+          },
+          {
+            "label": "models",
+            "offset": 0,
+            "slot": "4",
+            "type": "t_mapping(t_string_memory_ptr,t_bool)",
+            "contract": "AimosGatewayUpgradeable",
+            "src": "contracts/Relayer/AimosGatewayUpgradeable.sol:29"
+          }
+        ],
+        "types": {
+          "t_address": {
+            "label": "address",
+            "numberOfBytes": "20"
+          },
+          "t_bool": {
+            "label": "bool",
+            "numberOfBytes": "1"
+          },
+          "t_struct(InitializableStorage)732_storage": {
+            "label": "struct Initializable.InitializableStorage",
+            "members": [
+              {
+                "label": "_initialized",
+                "type": "t_uint64",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "_initializing",
+                "type": "t_bool",
+                "offset": 8,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_struct(OwnableStorage)672_storage": {
+            "label": "struct OwnableUpgradeable.OwnableStorage",
+            "members": [
+              {
+                "label": "_owner",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              }
+            ],
+            "numberOfBytes": "32"
+          },
+          "t_uint64": {
+            "label": "uint64",
+            "numberOfBytes": "8"
+          },
+          "t_bytes32": {
+            "label": "bytes32",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_string_memory_ptr,t_bool)": {
+            "label": "mapping(string => bool)",
+            "numberOfBytes": "32"
+          },
+          "t_mapping(t_uint256,t_struct(Call)27340_storage)": {
+            "label": "mapping(uint256 => struct AimosGatewayUpgradeable.Call)",
+            "numberOfBytes": "32"
+          },
+          "t_string_memory_ptr": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_string_storage": {
+            "label": "string",
+            "numberOfBytes": "32"
+          },
+          "t_struct(Call)27340_storage": {
+            "label": "struct AimosGatewayUpgradeable.Call",
+            "members": [
+              {
+                "label": "caller",
+                "type": "t_address",
+                "offset": 0,
+                "slot": "0"
+              },
+              {
+                "label": "model",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "1"
+              },
+              {
+                "label": "prompt",
+                "type": "t_string_storage",
+                "offset": 0,
+                "slot": "2"
+              },
+              {
+                "label": "withTools",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "3"
+              },
+              {
+                "label": "chainId",
+                "type": "t_uint256",
+                "offset": 0,
+                "slot": "4"
+              },
+              {
+                "label": "fulfilled",
+                "type": "t_bool",
+                "offset": 0,
+                "slot": "5"
+              },
+              {
+                "label": "resultHash",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "6"
+              },
+              {
+                "label": "txHash",
+                "type": "t_bytes32",
+                "offset": 0,
+                "slot": "7"
+              }
+            ],
+            "numberOfBytes": "256"
+          },
+          "t_uint256": {
+            "label": "uint256",
+            "numberOfBytes": "32"
+          }
+        },
+        "namespaces": {
+          "erc7201:openzeppelin.storage.Ownable": [
+            {
+              "contract": "OwnableUpgradeable",
+              "label": "_owner",
+              "type": "t_address",
+              "src": "@openzeppelin/contracts-upgradeable/access/OwnableUpgradeable.sol:24",
+              "offset": 0,
+              "slot": "0"
+            }
+          ],
+          "erc7201:openzeppelin.storage.Initializable": [
+            {
+              "contract": "Initializable",
+              "label": "_initialized",
+              "type": "t_uint64",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:69",
+              "offset": 0,
+              "slot": "0"
+            },
+            {
+              "contract": "Initializable",
+              "label": "_initializing",
+              "type": "t_bool",
+              "src": "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:73",
+              "offset": 8,
+              "slot": "0"
+            }
+          ]
+        }
+      }
+    }
+  }
+}
